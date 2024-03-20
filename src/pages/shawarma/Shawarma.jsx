@@ -12,6 +12,7 @@ import {
   Container,
   Left,
   MenuHeading,
+  MyCard,
   PopUpDesc,
   Right,
   TotalContainer,
@@ -181,28 +182,30 @@ const Shawarma = () => {
         </MenuHeading>
         <CardContainer>
           {ShawarmaMenu.map((item, index) => (
-            <Card key={index}>
-              <CardImage>
-                <Badge bg="danger">20% OFF</Badge>
-                <Card.Img variant="top" src={item.image} alt="shawrma_1" />
-              </CardImage>
-              <CardBody>
-                <Card.Body>
-                  <Card.Title>{item.title}</Card.Title>
-                  <Card.Text>{item.desc}</Card.Text>
-                  <p>{item.amount}</p>
-                  <Button
-                    variant="dark"
-                    onClick={() => {
-                      setselectedItem(item);
-                      setModalShow(true);
-                    }}
-                  >
-                    {item.btn}
-                  </Button>
-                </Card.Body>
-              </CardBody>
-            </Card>
+            <MyCard>
+              <Card style={{flexBasis: "22%"}} key={index}>
+                <CardImage>
+                  <Badge bg="danger">20% OFF</Badge>
+                  <Card.Img variant="top" src={item.image} alt="shawrma_1" />
+                </CardImage>
+                <CardBody>
+                  <Card.Body>
+                    <Card.Title>{item.title}</Card.Title>
+                    <Card.Text>{item.desc}</Card.Text>
+                    <p>{item.amount}</p>
+                    <Button
+                      variant="dark"
+                      onClick={() => {
+                        setselectedItem(item);
+                        setModalShow(true);
+                      }}
+                    >
+                      {item.btn}
+                    </Button>
+                  </Card.Body>
+                </CardBody>
+              </Card>
+            </MyCard>
           ))}
         </CardContainer>
       </Container>
