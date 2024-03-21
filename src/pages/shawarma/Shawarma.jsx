@@ -18,6 +18,7 @@ const Shawarma = () => {
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState([]);
 
+  
   const ShawarmaMenu = [
     {
       id: 1,
@@ -94,7 +95,12 @@ const Shawarma = () => {
     : 0;
   selectedExtras.forEach((extra) => {
     totalPrice += parseFloat(extra.price.replace("Rs: ", ""));
-  });
+  });   
+ 
+  const orderNow = (item) => { 
+   setselectedItem(item)
+   setModalShow(true)
+  }
 
   return (
     <>
@@ -116,10 +122,9 @@ const Shawarma = () => {
                     <p>{item.amount}</p>
                     <Button
                       variant="dark"
-                      onClick={() => {
-                        setselectedItem(item);
-                        setModalShow(true);
-                      }}
+                      onClick={()=>{
+                        orderNow(item)
+                        }}
                     >
                       {item.btn}
                     </Button>
@@ -136,6 +141,8 @@ const Shawarma = () => {
         quantity={quantity}
         handleDecreaseQuantity={handleDecreaseQuantity}
         handleIncreaseQuantity={handleIncreaseQuantity}
+        title={selectedItem ? selectedItem.title : ""}
+        desc={selectedItem ? selectedItem.desc : ""}
         selectedExtras={selectedExtras}
         handleExtraCheckboxChange={handleExtraCheckboxChange}
         totalPrice={totalPrice}

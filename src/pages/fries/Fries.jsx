@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Shawarma1 from "../../images/Shawarma-1.png";
+import Fries1 from "../../images/Deals.png";
 import {
   CardBody,
   CardContainer,
@@ -12,57 +12,57 @@ import {
 } from "../shawarma/Shawarma.styles";
 import ShawarmaModal from "../shawarma/ShawarmaModal"; // Import the modal component
 
-const Sandwich = () => {
+const Fries = () => {
     const [modalShow, setModalShow] = useState(false);
     const [selectedItem, setselectedItem] = useState(null);
     const [quantity, setQuantity] = useState(1);
     const [selectedExtras, setSelectedExtras] = useState([]);
   
-    const ShawarmaMenu = [
+    const FriesMenu = [
       {
         id: 1,
-        title: "Sandwich 1",
-        image: Shawarma1,
+        title: "Fries  1",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 500.00",
       },
       {
         id: 2,
-        title: "Sandwich 2",
-        image: Shawarma1,
+        title: "Fries  2",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 700.00",
       },
       {
         id: 3,
-        title: "Sandwich 3",
-        image: Shawarma1,
+        title: "Fries  3",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 800.00",
       },
       {
         id: 4,
-        title: "Sandwich 4",
-        image: Shawarma1,
+        title: "Fries  4",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 770.00",
       },
       {
         id: 5,
-        title: "Sandwich 5",
-        image: Shawarma1,
+        title: "Fries  5",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 890.00",
       },
       {
         id: 6,
-        title: "Sandwich 6",
-        image: Shawarma1,
+        title: "Fries  6",
+        image: Fries1,
         desc:"Some quick example text to build on the card title and make up the bulk of the card content.",
         btn: "Order now",
         amount: "Rs: 650.00",
@@ -100,10 +100,10 @@ const Sandwich = () => {
       <>
         <Container>
           <MenuHeading>
-            <h1>SANDWICH</h1>
+            <h1>FRIES</h1>
           </MenuHeading>
           <CardContainer>
-            {ShawarmaMenu.map((item, index) => (
+            {FriesMenu.map((item, index) => (
               <MyCard>
                 <Card style={{ flexBasis: "22%" }} key={index}>
                   <CardImage>
@@ -145,5 +145,4 @@ const Sandwich = () => {
       </>
     );
   };
-
-export default Sandwich
+export default Fries

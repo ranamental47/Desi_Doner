@@ -13,19 +13,24 @@ h1{
 `;
 export const CardImage = styled.div`
 width: ${({width}) => width ?width: "100%"};
-max-width: ${({maxWidth}) => maxWidth ?maxWidth: "18rem"};
 border-bottom: ${({borderBottom}) => borderBottom ?borderBottom: "1px solid silver"};
-@media (max-width: 768px){
-    max-width: ${({maxWidth}) => maxWidth ?maxWidth: "10rem"};
-  }
 `;
 export const CardBody = styled.div`
 width: ${({width}) => width ?width: "100%"};
-max-width: ${({maxWidth}) => maxWidth ?maxWidth: "18rem"};
+`;
+export const MyCard = styled.div`
+flex-basis: 15%;
+@media (max-width: 1440px){
+    flex-basis: 22%;
+}
 @media (max-width: 768px){
-    max-width: ${({maxWidth}) => maxWidth ?maxWidth: "10rem"};
     font-size: ${({fontSize}) => fontSize ?fontSize: "10px"};
-  }
+    flex-basis: 30%;
+}
+@media (max-width: 500px){
+    font-size: ${({fontSize}) => fontSize ?fontSize: "10px"};
+    flex-basis: 80%;
+}
 `;
 export const CardContainer = styled.div`
 width: ${({width}) => width ?width: "100%"};

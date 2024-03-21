@@ -1,7 +1,8 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-import { Btn, Left, PopUpDesc, Right, TotalContainer } from "./Shawarma.styles";
+// import logo from '../../images/logo.png'
+import { Btn, Left, PopUpDesc, Right, TotalContainer, ModalLogo } from "./Shawarma.styles";
 
 const ShawarmaModal = ({
   show,
@@ -12,6 +13,8 @@ const ShawarmaModal = ({
   selectedExtras,
   handleExtraCheckboxChange,
   totalPrice,
+  title,
+  desc,
 }) => {
     const PopUpMenu = [
         { id: 1, name: "Extra 1", price: "Rs: 20.00" },
@@ -24,22 +27,22 @@ const ShawarmaModal = ({
     const Ring = () => {
         window.open("tel:+923181424147");
     };
+    const ConfirmOrder = () => {
+      alert("Your Order has been placed!");
+    };
 
   return (
     <Modal show={show} onHide={onHide} size="md" centered>
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">Shawarma</Modal.Title>
+        <Modal.Title id="contained-modal-title-vcenter">Desi-Doner</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <div>
-          <p>
-            Some quick example text to build on the card title and make up the
-            bulk of the card content.
-          </p>
+          <p>{desc}</p>
         </div>
         <PopUpDesc>
           <div>
-            <strong>Quantity: </strong>
+            <strong>{title}</strong>
           </div>
           <Right>
             <Btn onClick={handleDecreaseQuantity}> - </Btn>
@@ -68,10 +71,8 @@ const ShawarmaModal = ({
         </TotalContainer>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="dark" onClick={Ring}>
-          Ring
-        </Button>
-        <Button variant="dark">Home Delivery</Button>
+        <Button variant="dark" onClick={Ring}>Call Us</Button>
+        <Button variant="dark" onClick={ConfirmOrder}>Confirm</Button>
       </Modal.Footer>
     </Modal>
   );

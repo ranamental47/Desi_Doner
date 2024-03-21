@@ -78,3 +78,12 @@ h4,h5{
     margin: ${({margin}) => margin ?margin: "0"};
 }
 `;
+export const ModalLogo = styled.div`
+object-fit: ${({objectFit}) => objectFit ?objectFit: "contain"};
+max-width: ${({maxWidth}) => maxWidth ?maxWidth: "100px"};
+img{
+    width: 100%;
+    background: black;
+    color: red;
+}
+`;
