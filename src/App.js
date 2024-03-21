@@ -12,6 +12,7 @@ import Shawarma from './pages/shawarma/Shawarma';
 import Drinks from './pages/drinks/Drinks';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
+import Sandwich from './pages/sandwich/Sandwich';
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
           <Route
             exact path="/drinks"
             element={<Drinks/>}
+          />
+          <Route
+            exact path="/sandwich"
+            element={<Sandwich/>}
           />
           <Route
             exact path="/login"

@@ -4,6 +4,7 @@ import Burger from '../burger/Burger';
 import Drinks from '../drinks/Drinks';
 import Carousel from 'react-bootstrap/Carousel';
 import hello from '../../images/fig4.jpg';
+import Sandwich from '../sandwich/Sandwich';
 // import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 const Menu = () => {
@@ -13,6 +14,7 @@ const Menu = () => {
    <Shawarma/>
    {/* <Burger/>
    <Drinks/> */}
+   <Sandwich/>
    </>
   )
 }
