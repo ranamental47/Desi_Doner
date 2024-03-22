@@ -2,16 +2,17 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Drink1 from '../../images/Drinksslider.png'
-import {CardBody, CardContainer, CardImage, Container, MenuHeading , MyCard} from '../burger/Burger.styles'
+import {CardBody, CardContainer, CardImage, Container, MenuHeading , MyCard} from '../shawarma/Shawarma.styles'
 import ShawarmaModal from "../shawarma/ShawarmaModal";
 
-const Drinks  = () => {
+const Drinks = () => {
   const [modalShow, setModalShow] = useState(false);
   const [selectedItem, setselectedItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState([]);
 
-  const DrinkMenu = [
+  
+  const DrinkMenu= [
     {
       id: 1,
       title: "Drink 1",
@@ -87,7 +88,12 @@ const Drinks  = () => {
     : 0;
   selectedExtras.forEach((extra) => {
     totalPrice += parseFloat(extra.price.replace("Rs: ", ""));
-  });
+  });   
+ 
+  const orderNow = (item) => { 
+   setselectedItem(item)
+   setModalShow(true)
+  }
 
   return (
     <>
@@ -109,10 +115,10 @@ const Drinks  = () => {
                     <p>{item.amount}</p>
                     <Button
                       variant="dark"
-                      onClick={() => {
-                        setselectedItem(item);
-                        setModalShow(true);
-                      }}
+                      size="sm"
+                      onClick={()=>{
+                        orderNow(item)
+                        }}
                     >
                       {item.btn}
                     </Button>
@@ -138,5 +144,6 @@ const Drinks  = () => {
     </>
   );
 };
+
 
 export default Drinks

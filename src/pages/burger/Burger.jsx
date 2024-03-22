@@ -2,15 +2,16 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Burger1 from '../../images/Burger.png'
-import { CardBody, CardContainer, CardImage, Container, MenuHeading, MyCard} from './Burger.styles'
+import {CardBody, CardContainer, CardImage, Container, MenuHeading , MyCard} from '../shawarma/Shawarma.styles'
 import ShawarmaModal from "../shawarma/ShawarmaModal";
 
-const Burger  = () => {
+const Burger = () => {
   const [modalShow, setModalShow] = useState(false);
   const [selectedItem, setselectedItem] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [selectedExtras, setSelectedExtras] = useState([]);
 
+  
   const BurgerMenu = [
     {
       id: 1,
@@ -87,13 +88,18 @@ const Burger  = () => {
     : 0;
   selectedExtras.forEach((extra) => {
     totalPrice += parseFloat(extra.price.replace("Rs: ", ""));
-  });
+  });   
+ 
+  const orderNow = (item) => { 
+   setselectedItem(item)
+   setModalShow(true)
+  }
 
   return (
     <>
       <Container>
         <MenuHeading>
-          <h1>BURGER</h1>
+          <h1>Burger</h1>
         </MenuHeading>
         <CardContainer>
           {BurgerMenu.map((item, index) => (
@@ -109,10 +115,10 @@ const Burger  = () => {
                     <p>{item.amount}</p>
                     <Button
                       variant="dark"
-                      onClick={() => {
-                        setselectedItem(item);
-                        setModalShow(true);
-                      }}
+                      size="sm"
+                      onClick={()=>{
+                        orderNow(item)
+                        }}
                     >
                       {item.btn}
                     </Button>

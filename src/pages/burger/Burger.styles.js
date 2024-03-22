@@ -27,9 +27,9 @@ flex-basis: 15%;
     font-size: ${({fontSize}) => fontSize ?fontSize: "10px"};
     flex-basis: 30%;
 }
-@media (max-width: 500px){
+@media (max-width: 452px){
     font-size: ${({fontSize}) => fontSize ?fontSize: "10px"};
-    flex-basis: 80%;
+    flex-basis: 40%;
 }
 `;
 export const CardContainer = styled.div`
@@ -48,13 +48,6 @@ padding: ${({padding}) => padding ?padding: "10px"};
 p{
     margin: ${({margin}) => margin ?margin: "0"};
 }
-`;
-export const Btn = styled.div`
-width: ${({width}) => width ?width: "25px"};
-border-radius: ${({radius}) => radius ?radius: "5px"};
-text-align: ${({textAlign}) => textAlign ?textAlign: "center"};
-background: ${({background}) => background ?background: "silver"};
-cursor: pointer;
 `;
 export const Right = styled.div`
 display: ${({display}) => display ?display: "flex"};
@@ -77,4 +70,19 @@ border-bottom: ${({borderBottom}) => borderBottom ?borderBottom: "1px solid silv
 h4,h5{
     margin: ${({margin}) => margin ?margin: "0"};
 }
+`;
+// export const ModalLogo = styled.div`
+// object-fit: ${({objectFit}) => objectFit ?objectFit: "contain"};
+// max-width: ${({maxWidth}) => maxWidth ?maxWidth: "100px"};
+// img{
+//     width: 100%;
+//     background: black;
+//     color: red;
+// }
+// `;
+
+export const Image = styled.img`
+object-fit: ${({objectFit}) => objectFit ?objectFit: "contain"};
+max-width: ${({maxWidth}) => maxWidth ?maxWidth: "20px"};
+cursor: pointer;
 `;

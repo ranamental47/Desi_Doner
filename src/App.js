@@ -13,6 +13,8 @@ import Drinks from './pages/drinks/Drinks';
 import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import Sandwich from './pages/sandwich/Sandwich';
+import Cart from './pages/cart/Cart';
+import Fries from './pages/fries/Fries';
 
 function App() {
   return (
@@ -39,6 +41,14 @@ function App() {
           <Route
             exact path="/sandwich"
             element={<Sandwich/>}
+          />
+          <Route
+            exact path="/fries"
+            element={<Fries/>}
+          />
+          <Route
+            exact path="/cart"
+            element={<Cart/>}
           />
           <Route
             exact path="/login"

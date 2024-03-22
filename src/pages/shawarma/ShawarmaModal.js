@@ -2,7 +2,10 @@ import React from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 // import logo from '../../images/logo.png'
-import { Btn, Left, PopUpDesc, Right, TotalContainer, ModalLogo } from "./Shawarma.styles";
+import minus from '../../images/minus.png'
+import plus from '../../images/plus.png'
+import { Link } from 'react-router-dom'
+import {Left, PopUpDesc, Right, TotalContainer, ModalLogo, Image } from "./Shawarma.styles";
 
 const ShawarmaModal = ({
   show,
@@ -23,12 +26,8 @@ const ShawarmaModal = ({
         { id: 4, name: "Extra 3", price: "Rs: 50.00" },
         { id: 5, name: "Extra 3", price: "Rs: 60.00" }
     ];
-
     const Ring = () => {
         window.open("tel:+923181424147");
-    };
-    const ConfirmOrder = () => {
-      alert("Your Order has been placed!");
     };
 
   return (
@@ -45,9 +44,9 @@ const ShawarmaModal = ({
             <strong>{title}</strong>
           </div>
           <Right>
-            <Btn onClick={handleDecreaseQuantity}> - </Btn>
-            <p>{quantity}</p>
-            <Btn onClick={handleIncreaseQuantity}> + </Btn>
+            <Image src={minus} alt="minus-icon" onClick={handleDecreaseQuantity}/>
+            <p>x {quantity}</p>
+            <Image src={plus} alt="minus-icon" onClick={handleIncreaseQuantity}/>
           </Right>
         </PopUpDesc>
         {PopUpMenu.map((item, index) => (
@@ -71,8 +70,8 @@ const ShawarmaModal = ({
         </TotalContainer>
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="dark" onClick={Ring}>Call Us</Button>
-        <Button variant="dark" onClick={ConfirmOrder}>Confirm</Button>
+        <Button variant="dark" size="sm" onClick={Ring}>Call Us</Button>
+        <Button variant="dark" size="sm"><Link to="/cart">Add to Cart</Link></Button>
       </Modal.Footer>
     </Modal>
   );

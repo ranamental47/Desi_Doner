@@ -6,6 +6,7 @@ import {
   CardBody,
   CardContainer,
   CardImage,
+  CardTitle,
   Container,
   MenuHeading,
   MyCard,
@@ -117,11 +118,14 @@ const Shawarma = () => {
                 </CardImage>
                 <CardBody>
                   <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
+                    <CardTitle>
+                      <Card.Title>{item.title}</Card.Title>
+                    </CardTitle>
                     <Card.Text>{item.desc}</Card.Text>
                     <p>{item.amount}</p>
                     <Button
                       variant="dark"
+                      size="sm"
                       onClick={()=>{
                         orderNow(item)
                         }}

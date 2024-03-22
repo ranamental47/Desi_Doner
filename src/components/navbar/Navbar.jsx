@@ -27,6 +27,8 @@ const Navbar = ({
         {text: 'Burger', path: 'burger'},
         {text: 'Drinks', path: 'drinks'},
         {text: 'Sandwich', path: 'sandwich'},
+        {text: 'Fries', path: 'fries'},
+        {text: 'Cart', path: 'cart'},
         {text: 'Login', path: 'login'},
         {text: 'Sign up', path: 'signup'},
     ];
