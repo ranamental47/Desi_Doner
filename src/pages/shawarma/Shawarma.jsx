@@ -102,7 +102,12 @@ const Shawarma = () => {
    setselectedItem(item)
    setModalShow(true)
   }
-
+const hideModal = ()=>{
+  setselectedItem(null);
+  setQuantity(1);
+  setSelectedExtras([]);
+  setModalShow(false);
+}
   return (
     <>
       <Container>
@@ -110,9 +115,9 @@ const Shawarma = () => {
           <h1>SHAWARMA</h1>
         </MenuHeading>
         <CardContainer>
-          {ShawarmaMenu.map((item, index) => (
+          {ShawarmaMenu.map((item) => (
             <MyCard>
-              <Card style={{ flexBasis: "22%" }} key={index}>
+              <Card style={{ flexBasis: "22%" }}>
                 <CardImage>
                   <Card.Img variant="top" src={item.image} alt="shawrma_1" />
                 </CardImage>
@@ -141,7 +146,7 @@ const Shawarma = () => {
       </Container>
       <ShawarmaModal
         show={modalShow}
-        onHide={() => setModalShow(false)}
+        onHide={hideModal}
         quantity={quantity}
         handleDecreaseQuantity={handleDecreaseQuantity}
         handleIncreaseQuantity={handleIncreaseQuantity}

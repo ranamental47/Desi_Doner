@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Burger1 from '../../images/Burger.png'
-import {CardBody, CardContainer, CardImage, Container, MenuHeading , MyCard} from '../shawarma/Shawarma.styles'
+import {CardBody, CardContainer, CardImage, Container, CardTitle, MenuHeading , MyCard} from '../shawarma/Shawarma.styles'
 import ShawarmaModal from "../shawarma/ShawarmaModal";
 
 const Burger = () => {
@@ -94,23 +94,30 @@ const Burger = () => {
    setselectedItem(item)
    setModalShow(true)
   }
-
+const hideModal = ()=>{
+  setselectedItem(null);
+  setQuantity(1);
+  setSelectedExtras([]);
+  setModalShow(false);
+}
   return (
     <>
       <Container>
         <MenuHeading>
-          <h1>Burger</h1>
+          <h1>BURGER</h1>
         </MenuHeading>
         <CardContainer>
-          {BurgerMenu.map((item, index) => (
+          {BurgerMenu.map((item) => (
             <MyCard>
-              <Card style={{ flexBasis: "22%" }} key={index}>
+              <Card style={{ flexBasis: "22%" }}>
                 <CardImage>
                   <Card.Img variant="top" src={item.image} alt="shawrma_1" />
                 </CardImage>
                 <CardBody>
                   <Card.Body>
-                    <Card.Title>{item.title}</Card.Title>
+                    <CardTitle>
+                      <Card.Title>{item.title}</Card.Title>
+                    </CardTitle>
                     <Card.Text>{item.desc}</Card.Text>
                     <p>{item.amount}</p>
                     <Button
@@ -131,7 +138,7 @@ const Burger = () => {
       </Container>
       <ShawarmaModal
         show={modalShow}
-        onHide={() => setModalShow(false)}
+        onHide={hideModal}
         quantity={quantity}
         handleDecreaseQuantity={handleDecreaseQuantity}
         handleIncreaseQuantity={handleIncreaseQuantity}
@@ -144,5 +151,6 @@ const Burger = () => {
     </>
   );
 };
+
 
 export default Burger

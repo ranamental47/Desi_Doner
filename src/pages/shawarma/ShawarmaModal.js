@@ -71,7 +71,9 @@ const ShawarmaModal = ({
       </Modal.Body>
       <Modal.Footer>
         <Button variant="dark" size="sm" onClick={Ring}>Call Us</Button>
-        <Button variant="dark" size="sm"><Link to="/cart">Add to Cart</Link></Button>
+        <Link to="/cart">
+          <Button variant="dark" size="sm">Add to Cart</Button>
+        </Link>
       </Modal.Footer>
     </Modal>
   );
