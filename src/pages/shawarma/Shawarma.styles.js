@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import BgImage from '../../images/Rectangle9.png'
 
 export const Container = styled.div`
   padding: ${({ padding }) => padding ? padding : "10px 0"};
@@ -22,7 +23,7 @@ export const CardBody = styled.div`
 `;
 export const CardTitle = styled.div`
   @media (max-width: 452px) {
-    font-size: ${({ fontSize }) => fontSize ? fontSize : "10px"};
+    font-size: ${({ fontSize }) => fontSize ? fontSize : "7px"};
   }
 `;
 export const CardContainer = styled.div`
@@ -32,11 +33,16 @@ export const CardContainer = styled.div`
   justify-content: ${({ justifyContent }) => justifyContent ? justifyContent : "center"};
   align-items: ${({ alignItems }) => alignItems ? alignItems : "center"};
   gap: ${({ gap }) => gap ? gap : "10px"};
+  /* background-image: url(${BgImage}); */
+  background: rgba(252, 238, 213, 1);
+  border-radius: 65% 35% 100% 0% / 24% 30% 70% 76% ;
   padding: 20px;
 `;
 export const MyCard = styled.div`
   flex-basis: 15%;
   margin-bottom: 20px;
+ 
+  /* background: red; */
   @media (max-width: 1440px) {
     flex-basis: 22%;
   }
@@ -46,13 +52,9 @@ export const MyCard = styled.div`
   }
   @media (max-width: 452px) {
     font-size: ${({ fontSize }) => fontSize ? fontSize : "10px"};
-    flex-basis: 40%;
+    flex-basis: 47%;
   }
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.1); /* Adjust the scale factor as needed */
-    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.1);
-  }
+  
 `;
 export const PopUpDesc = styled.div`
   display: ${({ display }) => display ? display : "flex"};

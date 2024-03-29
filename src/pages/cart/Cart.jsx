@@ -1,5 +1,5 @@
 import React from 'react';
-import { Btn, Container, MyCart } from './Cart.styles';
+import { Btn, CartHeading, Container, MyCart } from './Cart.styles';
 import { Button, Table } from 'react-bootstrap';
 
 const Cart = () => {
@@ -26,6 +26,9 @@ const Cart = () => {
     <>
       <Container>
         <MyCart>
+          <CartHeading>
+            <h1>My Cart</h1>
+          </CartHeading>
           <Table>
             <thead>
             <tr>

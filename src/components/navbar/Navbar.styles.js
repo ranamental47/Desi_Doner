@@ -4,6 +4,7 @@ import navBg from '../../images/dark_Tire.png'
 export const Container = styled.div`
   width: ${({width}) => width ?width: "100%"};
   height: ${({height}) => height ?height: "auto"};
+  margin-bottom: 50px;
  
 `;
 export const Nav = styled.nav`
@@ -12,6 +13,11 @@ export const Nav = styled.nav`
   display: ${({display}) => display ?display: "flex"};
   align-items: ${({alignItems}) => alignItems ?alignItems: "center"};
   justify-content: ${({justifyContent}) => justifyContent ?justifyContent: "space-around"};
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
   @media (max-width: 1024px){
     display: ${({display}) => display ?display: "flex"};
     flex-wrap: ${({wrap}) => wrap ?wrap: "wrap"};
@@ -59,6 +65,7 @@ export const Ul = styled.ul`
       justify-content: ${({justifyContent}) => justifyContent ?justifyContent: "left"};
       text-align: ${({textAlign}) => textAlign ?textAlign: "center"};
       margin: ${({margin}) => margin ?margin: "0"};
+      gap: ${({gap}) => gap ?gap: "20px"};
       padding: 0 !important;
     }
 `;
@@ -70,13 +77,9 @@ export const Li = styled.li`
     font-weight: ${({fontWeight}) => fontWeight ?fontWeight: "400"};
     text-decoration: ${({textDecoration}) => textDecoration ?textDecoration: "none"};
  }
- a:active{
-   color: ${({color}) => color ?color: "red"};
- }
- a:hover{
-   color: ${({color}) => color ?color: "red"};
- }
- a:focus{
-   color: ${({color}) => color ?color: "red"};
- }
+ a:active,
+  a:hover,
+  a:focus {
+    color: rgba(252, 238, 213, 1);
+  }
 `;
